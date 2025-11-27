@@ -71,9 +71,9 @@ Les couleurs du thème sont définies dans `app/globals.css` :
 ## 📞 Support
 
 Pour toute question, contactez-nous via :
-- WhatsApp : +224XXXXXXXXX
-- Telegram : @masterit_gn
-- Email : contact@masterit.gn
+- WhatsApp : +224611353456
+- Telegram : @scriptseinsei
+- Email : scriptseinseidieye@gmail.com
 
 ---
 
