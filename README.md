@@ -77,4 +77,4 @@ Pour toute question, contactez-nous via :
 
 ---
 
-Développé avec ❤️ pour l'Afrique francophone
+Développé par Hady Dieye et scriptseinsei
