@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/packs/fullstack-dev":{},"/packs/cybersec-expert":{},"/packs/ai-master":{},"/packs/devops-cloud":{},"/packs/business-digital":{},"/packs/trading-pro":{}},"dynamicRoutes":{"/packs/[id]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/packs/[id]","routeRegex":"^\\/packs\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"c3a19ae8ff07c117c64cc38370c87af3","previewModeSigningKey":"4ef9b24ac810cdcb8acfbee6750c68e8b6969978d482d145d5cab54acce5a552","previewModeEncryptionKey":"13a98db174a4b09bf0089e32d3e7500ef0321bfa1873d88f0cee3d6e7769a629"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "fe3e2823e42d7a48091ae28ce032ac29",
+    "previewModeSigningKey": "f118f68f24a133051519258c646c1aeaf8b89f949008c104ffd4f4b80cecae2f",
+    "previewModeEncryptionKey": "efc75b7b7f630c9043d7f3db1df685836ada300c6b1960eea62a66145336ef5b"
+  }
+}
