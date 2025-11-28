@@ -1,6 +1,6 @@
 {
-  "/formations/[id]/page": "app/formations/[id]/page.js",
-  "/formations/page": "app/formations/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/packs/[id]/page": "app/packs/[id]/page.js",
   "/packs/page": "app/packs/page.js",
   "/page": "app/page.js"
 }

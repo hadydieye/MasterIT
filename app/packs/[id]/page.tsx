@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle2, Clock, Award, Users, Star, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { getPriceBreakdown } from "@/lib/utils"
 
 const packs = {
   "fullstack-dev": {
@@ -421,6 +422,10 @@ export default async function PackDetailPage({ params }: { params: Promise<{ id:
     notFound()
   }
 
+  const price = getPriceBreakdown(pack.price)
+  const originalPrice = getPriceBreakdown(pack.originalPrice)
+  const savings = getPriceBreakdown(pack.originalPrice - pack.price)
+
   const whatsappNumber = "224611353456"
   const whatsappMessage = encodeURIComponent(
     `Bonjour MasterIT, je suis intéressé par le pack "${pack.name}". Pouvez-vous me donner plus d'informations sur les modalités de paiement ?`,
@@ -526,17 +531,20 @@ export default async function PackDetailPage({ params }: { params: Promise<{ id:
             <Card className="p-6 sticky top-24 space-y-6">
               <div>
                 <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-3xl font-bold text-primary">{pack.price.toLocaleString()}</span>
+                  <span className="text-3xl font-bold text-primary">{price.gnf.formatted}</span>
                   <span className="text-sm text-muted-foreground">GNF</span>
                 </div>
+                <p className="text-sm text-muted-foreground">
+                  ≈ {price.fcfa.formatted} FCFA • {price.usd.formatted} $
+                </p>
                 <div className="flex items-center gap-2">
                   <span className="text-lg text-muted-foreground line-through">
-                    {pack.originalPrice.toLocaleString()}
+                    {originalPrice.gnf.formatted}
                   </span>
                   <Badge className="bg-accent text-accent-foreground">-{pack.discount}%</Badge>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Économise {(pack.originalPrice - pack.price).toLocaleString()} GNF
+                  Économise {savings.gnf.formatted} GNF (≈ {savings.fcfa.formatted} FCFA • {savings.usd.formatted} $)
                 </p>
               </div>
 

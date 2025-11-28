@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Clock, BarChart, Star, Users, CheckCircle2, PlayCircle, FileText, Award, Share2, MapPin } from "lucide-react"
 import { trainingPrograms } from "@/data/trainings"
+import { getPriceBreakdown } from "@/lib/utils"
 
 export function generateStaticParams() {
   return Object.keys(trainingPrograms).map((id) => ({ id }))
@@ -15,6 +16,7 @@ export default async function TrainingDetailPage({ params }: { params: Promise<{
   const { id } = await params
   const training = trainingPrograms[id as keyof typeof trainingPrograms]
   const totalPrograms = Object.keys(trainingPrograms).length
+  const price = getPriceBreakdown(training.price)
 
   if (!training) {
     notFound()
@@ -201,7 +203,10 @@ export default async function TrainingDetailPage({ params }: { params: Promise<{
           <div className="lg:col-span-1">
             <Card className="p-6 sticky top-24 space-y-6">
               <div>
-                <div className="text-3xl font-bold text-primary mb-1">{training.price.toLocaleString()} GNF</div>
+                <div className="text-3xl font-bold text-primary mb-1">{price.gnf.formatted} GNF</div>
+                <p className="text-sm text-muted-foreground">
+                  ≈ {price.fcfa.formatted} FCFA • {price.usd.formatted} $
+                </p>
                 <div className="text-sm text-muted-foreground">Paiement unique</div>
               </div>
 

@@ -1,27 +1,166 @@
-[00:00:01.722] Server  LOG      ✓ Ready in 1137ms
-[00:00:13.457] Server  LOG      ○ Compiling /packs ...
-[00:00:15.819] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[00:00:16.886] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:18.110] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:18.111] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/packs","route":"/packs"}
-[00:00:18.111] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/packs color: rgb(120, 120, 120) color: inherit {"dp":"/packs","o":"http://localhost:3000/packs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764335411980}
-[00:00:23.276] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:23.276] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/formations color: rgb(120, 120, 120) color: inherit {"dp":"/formations","o":"http://localhost:3000/formations","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764335417129}
-[00:02:11.128] Server  LOG      ✓ Compiled in 302ms
-[00:03:02.003] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[00:03:02.873] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:03.178] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:03:03.178] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/formations","route":"/formations"}
-[00:03:03.178] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/formations color: rgb(120, 120, 120) color: inherit {"dp":"/formations","o":"http://localhost:3000/formations","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764335576919}
-[00:03:03.376] Browser WARN    Image with src "/images/Programmation Python.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:03:11.829] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:03:11.829] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/formations/anglais-professionnel color: rgb(120, 120, 120) color: inherit {"dp":"/formations/[id]","o":"http://localhost:3000/formations/anglais-professionnel","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764335585688}
-[00:04:21.617] Server  WARN     ⚠ Cross origin request detected from 192.168.1.195 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:04:21.912] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:26.049] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:04:26.049] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:04:26.049] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.1.195:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.1.195:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764335659921}
-[00:04:40.758] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:04:40.758] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.1.195:3000/formations color: rgb(120, 120, 120) color: inherit {"dp":"/formations","o":"http://192.168.1.195:3000/formations","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764335674512}
+[00:00:01.763] Server  LOG      ✓ Ready in 1071ms
+[00:00:25.141] Server  LOG      ○ Compiling / ...
+[00:00:34.249] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:00:35.657] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:36.544] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:36.544] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:36.544] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764340128935}
+[00:00:41.622] Server  ERROR    ⨯ ./components/packs-grid.tsx:235:12
+Parsing ecmascript source code failed
+  233 |               </div>
+  234 |             </Card>
+> 235 |           ))}
+      |            ^
+  236 |         </div>
+  237 |       </div>
+  238 |     </section>
+
+Expected '</', got ')'
+
+Import trace:
+  Server Component:
+    ./components/packs-grid.tsx
+    ./app/packs/page.tsx
+
+
+[00:00:41.878] Browser ERROR   ./components/packs-grid.tsx:235:12
+Parsing ecmascript source code failed
+  233 |               </div>
+  234 |             </Card>
+> 235 |           ))}
+      |            ^
+  236 |         </div>
+  237 |       </div>
+  238 |     </section>
+
+Expected '</', got ')'
+
+Import trace:
+  Server Component:
+    ./components/packs-grid.tsx
+    ./app/packs/page.tsx
+[00:00:44.643] Server  LOG      ○ Compiling /_error ...
+[00:00:44.771] Browser ERROR   ./components/packs-grid.tsx:235:12
+Parsing ecmascript source code failed
+  233 |               </div>
+  234 |             </Card>
+> 235 |           ))}
+      |            ^
+  236 |         </div>
+  237 |       </div>
+  238 |     </section>
+
+Expected '</', got ')'
+
+Import trace:
+  Server Component:
+    ./components/packs-grid.tsx
+    ./app/packs/page.tsx
+[00:00:45.133] Browser ERROR   ./components/packs-grid.tsx:235:12
+Parsing ecmascript source code failed
+  233 |               </div>
+  234 |             </Card>
+> 235 |           ))}
+      |            ^
+  236 |         </div>
+  237 |       </div>
+  238 |     </section>
+
+Expected '</', got ')'
+
+Import trace:
+  Server Component:
+    ./components/packs-grid.tsx
+    ./app/packs/page.tsx
+[00:00:47.412] Browser ERROR   ./components/packs-grid.tsx:235:12
+Parsing ecmascript source code failed
+  233 |               </div>
+  234 |             </Card>
+> 235 |           ))}
+      |            ^
+  236 |         </div>
+  237 |       </div>
+  238 |     </section>
+
+Expected '</', got ')'
+
+Import trace:
+  Server Component:
+    ./components/packs-grid.tsx
+    ./app/packs/page.tsx
+[00:00:47.465] Server  ERROR    ⨯ ./components/packs-grid.tsx:235:12
+Parsing ecmascript source code failed
+  233 |               </div>
+  234 |             </Card>
+> 235 |           ))}
+      |            ^
+  236 |         </div>
+  237 |       </div>
+  238 |     </section>
+
+Expected '</', got ')'
+
+Import trace:
+  Server Component:
+    ./components/packs-grid.tsx
+    ./app/packs/page.tsx
+
+
+[00:00:48.351] Browser ERROR   uncaughtError: Error: ./components/packs-grid.tsx:235:12
+Parsing ecmascript source code failed
+  233 |               </div>
+  234 |             </Card>
+> 235 |           ))}
+      |            ^
+  236 |         </div>
+  237 |       </div>
+  238 |     </section>
+
+Expected '</', got ')'
+
+Import trace:
+  Server Component:
+    ./components/packs-grid.tsx
+    ./app/packs/page.tsx
+
+
+[00:00:48.816] Browser ERROR   ./components/packs-grid.tsx:235:12
+Parsing ecmascript source code failed
+  233 |               </div>
+  234 |             </Card>
+> 235 |           ))}
+      |            ^
+  236 |         </div>
+  237 |       </div>
+  238 |     </section>
+
+Expected '</', got ')'
+
+Import trace:
+  Server Component:
+    ./components/packs-grid.tsx
+    ./app/packs/page.tsx
+[00:00:48.817] Browser ERROR   ./components/packs-grid.tsx:235:12
+Parsing ecmascript source code failed
+  233 |               </div>
+  234 |             </Card>
+> 235 |           ))}
+      |            ^
+  236 |         </div>
+  237 |       </div>
+  238 |     </section>
+
+Expected '</', got ')'
+
+Import trace:
+  Server Component:
+    ./components/packs-grid.tsx
+    ./app/packs/page.tsx
+[00:01:59.985] Server  LOG      ✓ Compiled in 331ms
+[00:02:00.581] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:02:02.251] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:02.833] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:02:02.834] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/packs","route":"/packs"}
+[00:02:02.834] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/packs color: rgb(120, 120, 120) color: inherit {"dp":"/packs","o":"http://localhost:3000/packs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764340214956}
+[00:02:40.230] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:02:40.230] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/packs/fullstack-dev color: rgb(120, 120, 120) color: inherit {"dp":"/packs/[id]","o":"http://localhost:3000/packs/fullstack-dev","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764340252617}

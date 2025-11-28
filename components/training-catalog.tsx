@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Clock, BarChart, Star, Users, X } from "lucide-react"
 import { trainingPrograms } from "@/data/trainings"
+import { getPriceBreakdown } from "@/lib/utils"
 
 export function TrainingCatalog() {
   const searchParams = useSearchParams()
@@ -96,7 +97,9 @@ export function TrainingCatalog() {
       </div>
 
       <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
-        {filteredTrainings.map((training) => (
+        {filteredTrainings.map((training) => {
+          const price = getPriceBreakdown(training.price)
+          return (
           <Card key={training.id} className="overflow-hidden hover:border-primary/50 transition-all group">
             <div className="relative h-36 overflow-hidden">
               <Image
@@ -137,9 +140,14 @@ export function TrainingCatalog() {
               </div>
 
               <div className="flex items-center justify-between pt-3 border-t">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-xl font-bold text-primary">{training.price.toLocaleString()}</span>
-                  <span className="text-xs text-muted-foreground">GNF</span>
+                <div className="space-y-1">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-xl font-bold text-primary">{price.gnf.formatted}</span>
+                    <span className="text-xs text-muted-foreground">GNF</span>
+                  </div>
+                  <p className="text-[11px] text-muted-foreground">
+                    ≈ {price.fcfa.formatted} FCFA • {price.usd.formatted} $
+                  </p>
                 </div>
                 <Button asChild size="sm" className="text-xs">
                   <Link href={`/formations/${training.id}`}>Voir détails</Link>

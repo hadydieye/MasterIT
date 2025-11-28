@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle2, Clock, Award, TrendingUp } from "lucide-react"
+import { getPriceBreakdown } from "@/lib/utils"
 
 export function PacksGrid() {
   const packs = [
@@ -152,7 +153,10 @@ export function PacksGrid() {
     <section className="py-16 px-4">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {packs.map((pack) => (
+          {packs.map((pack) => {
+            const price = getPriceBreakdown(pack.price)
+            const originalPrice = getPriceBreakdown(pack.originalPrice)
+            return (
             <Card
               key={pack.id}
               className={`relative overflow-hidden hover:border-primary/50 transition-all group ${
@@ -210,12 +214,17 @@ export function PacksGrid() {
                 </div>
 
                 <div className="border-t pt-4">
-                  <div className="flex items-baseline gap-2 mb-4">
-                    <span className="text-3xl font-bold text-primary">{pack.price.toLocaleString()}</span>
-                    <span className="text-sm text-muted-foreground">GNF</span>
-                    <span className="text-sm text-muted-foreground line-through ml-auto">
-                      {pack.originalPrice.toLocaleString()}
-                    </span>
+                  <div className="space-y-1 mb-3">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-3xl font-bold text-primary">{price.gnf.formatted}</span>
+                      <span className="text-sm text-muted-foreground">GNF</span>
+                      <span className="text-sm text-muted-foreground line-through ml-auto">
+                        {originalPrice.gnf.formatted}
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      ≈ {price.fcfa.formatted} FCFA • {price.usd.formatted} $
+                    </p>
                   </div>
                   <Button asChild className="w-full" size="lg">
                     <Link href={`/packs/${pack.id}`}>Voir les détails</Link>
@@ -223,9 +232,9 @@ export function PacksGrid() {
                 </div>
               </div>
             </Card>
-          ))}
+          )})}
         </div>
       </div>
     </section>
-  )
+  );
 }
