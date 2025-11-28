@@ -95,10 +95,10 @@ export function TrainingCatalog() {
         </select>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
         {filteredTrainings.map((training) => (
           <Card key={training.id} className="overflow-hidden hover:border-primary/50 transition-all group">
-            <div className="relative h-48 overflow-hidden">
+            <div className="relative h-36 overflow-hidden">
               <Image
                 src={training.image || "/placeholder.svg"}
                 alt={training.title}
@@ -108,13 +108,13 @@ export function TrainingCatalog() {
               />
               <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground">{training.category}</Badge>
             </div>
-            <div className="p-6 space-y-4">
-              <div>
-                <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">{training.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{training.description}</p>
+            <div className="p-4 space-y-3">
+              <div className="space-y-2">
+                <h3 className="font-semibold text-base group-hover:text-primary transition-colors">{training.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">{training.description}</p>
               </div>
 
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <div className="flex items-center gap-3 text-xs text-muted-foreground">
                 <div className="flex items-center gap-1">
                   <BarChart className="h-4 w-4" />
                   {training.level}
@@ -126,22 +126,22 @@ export function TrainingCatalog() {
               </div>
 
               <div className="flex items-center gap-4 text-sm">
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 text-sm">
                   <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
                   <span className="font-semibold">{training.rating}</span>
                 </div>
-                <div className="flex items-center gap-1 text-muted-foreground">
+                <div className="flex items-center gap-1 text-muted-foreground text-xs">
                   <Users className="h-4 w-4" />
                   {training.students.toLocaleString()} étudiants
                 </div>
               </div>
 
-              <div className="flex items-center justify-between pt-4 border-t">
-                <div>
-                  <span className="text-2xl font-bold text-primary">{training.price.toLocaleString()}</span>
-                  <span className="text-sm text-muted-foreground ml-1">GNF</span>
+              <div className="flex items-center justify-between pt-3 border-t">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-xl font-bold text-primary">{training.price.toLocaleString()}</span>
+                  <span className="text-xs text-muted-foreground">GNF</span>
                 </div>
-                <Button asChild>
+                <Button asChild size="sm" className="text-xs">
                   <Link href={`/formations/${training.id}`}>Voir détails</Link>
                 </Button>
               </div>
