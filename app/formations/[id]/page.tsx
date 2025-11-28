@@ -14,6 +14,7 @@ export function generateStaticParams() {
 export default async function TrainingDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const training = trainingPrograms[id as keyof typeof trainingPrograms]
+  const totalPrograms = Object.keys(trainingPrograms).length
 
   if (!training) {
     notFound()
@@ -144,7 +145,7 @@ export default async function TrainingDetailPage({ params }: { params: Promise<{
                   <div className="text-sm text-muted-foreground">Note moyenne</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">5</div>
+                  <div className="text-2xl font-bold text-primary">{totalPrograms}</div>
                   <div className="text-sm text-muted-foreground">Programmes actifs</div>
                 </div>
                 <div className="text-center">

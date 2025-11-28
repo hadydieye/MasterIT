@@ -1,0 +1,6 @@
+{
+  "/formations/[id]/page": "app/formations/[id]/page.js",
+  "/formations/page": "app/formations/page.js",
+  "/packs/page": "app/packs/page.js",
+  "/page": "app/page.js"
+}

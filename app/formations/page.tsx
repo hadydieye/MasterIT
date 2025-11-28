@@ -1,10 +1,13 @@
 import { Suspense } from "react"
+import { trainingPrograms } from "@/data/trainings"
 import { TrainingCatalog } from "@/components/training-catalog"
 
 export const metadata = {
   title: "Programmes & Formations - MasterIT",
   description: "Les bootcamps et coachings animés par Hady Dieye pour créer un vrai revenu tech",
 }
+
+const totalPrograms = Object.keys(trainingPrograms).length
 
 export default function FormationsPage() {
   return (
@@ -18,7 +21,8 @@ export default function FormationsPage() {
             </span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-            5 parcours intensifs basés sur mes missions réelles : dev, pentest, IA, DevOps et monétisation digitale.
+            {totalPrograms} formations couvrent désormais chaque stack : langages, IA, réseaux, Linux, DevOps, cyber,
+            business, trading et compétences transverses. Tout est découpé par technologie, prêt à être choisi.
           </p>
         </div>
 

@@ -12,15 +12,16 @@ export function TrainingFilters() {
   const [priceRange, setPriceRange] = useState([0, 500000])
 
   const categories = [
-    "Développement Web & Mobile",
+    "Programmation",
     "Intelligence Artificielle",
-    "Réseaux & Infrastructures",
-    "Cybersécurité",
-    "Systèmes & Administration",
-    "Business & E-Commerce",
-    "Trading & Finance",
-    "Design & Création",
+    "Data & BI",
+    "Réseaux & Infrastructure",
+    "Linux & Systèmes",
+    "DevOps & Cloud",
+    "Cybersécurité & Hacking",
+    "Business & Marketing",
     "Compétences Complémentaires",
+    "Trading & Finance",
   ]
 
   const levels = ["Débutant", "Intermédiaire", "Avancé", "Expert"]

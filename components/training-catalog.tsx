@@ -18,11 +18,16 @@ export function TrainingCatalog() {
   const [sortBy, setSortBy] = useState("popular")
 
   const categoryMap: Record<string, string> = {
-    developpement: "Développement & Freelance",
-    cyber: "Cybersécurité Offensive",
-    ia: "IA & No-Code",
+    programmation: "Programmation",
+    data: "Data & BI",
+    ia: "Intelligence Artificielle",
+    reseaux: "Réseaux & Infrastructure",
+    linux: "Linux & Systèmes",
     devops: "DevOps & Cloud",
-    business: "Business & Monétisation",
+    securite: "Cybersécurité & Hacking",
+    business: "Business & Marketing",
+    skills: "Compétences Complémentaires",
+    trading: "Trading & Finance",
   }
 
   const trainings = Object.values(trainingPrograms)
