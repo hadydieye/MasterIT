@@ -98,9 +98,9 @@ export function TrainingCatalog() {
 
       <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
         {filteredTrainings.map((training) => {
-          const price = getPriceBreakdown(training.price)
+          const price = getPriceBreakdown(training.price);
           return (
-          <Card key={training.id} className="overflow-hidden hover:border-primary/50 transition-all group">
+            <Card key={training.id} className="overflow-hidden hover:border-primary/50 transition-all group">
             <div className="relative h-36 overflow-hidden">
               <Image
                 src={training.image || "/placeholder.svg"}
@@ -155,7 +155,8 @@ export function TrainingCatalog() {
               </div>
             </div>
           </Card>
-        ))}
+          );
+        })}
       </div>
     </div>
   )
