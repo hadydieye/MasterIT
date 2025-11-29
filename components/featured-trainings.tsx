@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Star, Clock, Users, ArrowRight } from "lucide-react"
-import { trainingPrograms } from "@/data/trainings"
+// trainingPrograms import removed as we'll receive trainings as a prop
 
 type Training = {
   id: string
@@ -33,14 +33,17 @@ const categoryColors: Record<string, string> = {
   'Trading & Finance': 'bg-emerald-900/50 text-emerald-300 border-emerald-700'
 }
 
-export function FeaturedTrainings() {
+interface FeaturedTrainingsProps {
+  trainings: Training[]
+}
+
+export function FeaturedTrainings({ trainings }: FeaturedTrainingsProps) {
   // Sélectionner 4 formations aléatoires
   const featuredTrainings = useMemo(() => {
-    const trainings = Object.values(trainingPrograms)
     return [...trainings]
       .sort(() => 0.5 - Math.random())
       .slice(0, 4)
-  }, [])
+  }, [trainings])
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('fr-GN', {

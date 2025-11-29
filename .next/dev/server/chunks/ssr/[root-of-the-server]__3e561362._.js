@@ -375,6 +375,7 @@ __turbopack_context__.s([
     ()=>FeaturedTrainings
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.react-server.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/button.tsx [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/card.tsx [app-rsc] (ecmascript)");
@@ -391,68 +392,28 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
-// Données des formations en vedette (à remplacer par vos données réelles)
-const FEATURED_TRAININGS = [
-    {
-        id: 'programmation-python',
-        title: 'Programmation Python Avancée',
-        description: 'Maîtrisez Python avec des projets concrets et des bonnes pratiques de développement',
-        image: '/images/courses/python.jpg',
-        category: 'Programmation',
-        level: 'Intermédiaire',
-        duration: '8 semaines',
-        price: 350000,
-        rating: 4.8,
-        students: 1245
-    },
-    {
-        id: 'cybersecurite',
-        title: 'Hacking Éthique & Cybersécurité',
-        description: 'Apprenez les techniques de sécurisation des systèmes et de test d\'intrusion',
-        image: '/images/courses/cyber-sec.jpg',
-        category: 'Cybersécurité & Hacking',
-        level: 'Avancé',
-        duration: '10 semaines',
-        price: 450000,
-        rating: 4.9,
-        students: 876
-    },
-    {
-        id: 'reseau-ccna',
-        title: 'Réseaux Cisco CCNA',
-        description: 'Préparez la certification CCNA avec des ateliers pratiques en laboratoire',
-        image: '/images/courses/network.jpg',
-        category: 'Système & Réseau',
-        level: 'Intermédiaire',
-        duration: '12 semaines',
-        price: 420000,
-        rating: 4.7,
-        students: 932
-    },
-    {
-        id: 'marketing-digital',
-        title: 'Marketing Digital Complet',
-        description: 'Maîtrisez tous les leviers du marketing digital pour booster votre entreprise',
-        image: '/images/courses/marketing.jpg',
-        category: 'Marketing Digital',
-        level: 'Débutant',
-        duration: '6 semaines',
-        price: 280000,
-        rating: 4.6,
-        students: 1567
-    }
-];
-// Couleurs par catégorie pour un style cohérent
+;
 const categoryColors = {
-    'Programmation': 'bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300',
-    'Cybersécurité & Hacking': 'bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-300',
-    'Système & Réseau': 'bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300',
-    'Marketing Digital': 'bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300',
-    'Business & Entrepreneuriat': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300',
-    'Design & Création': 'bg-pink-100 text-pink-800 dark:bg-pink-900/50 dark:text-pink-300'
+    'Programmation': 'bg-blue-900/50 text-blue-300 border-blue-700',
+    'Data & BI': 'bg-purple-900/50 text-purple-300 border-purple-700',
+    'Intelligence Artificielle': 'bg-cyan-900/50 text-cyan-300 border-cyan-700',
+    'Réseaux & Infrastructure': 'bg-green-900/50 text-green-300 border-green-700',
+    'Linux & Systèmes': 'bg-yellow-900/50 text-yellow-300 border-yellow-700',
+    'DevOps & Cloud': 'bg-indigo-900/50 text-indigo-300 border-indigo-700',
+    'Cybersécurité & Hacking': 'bg-red-900/50 text-red-300 border-red-700',
+    'Business & Marketing': 'bg-pink-900/50 text-pink-300 border-pink-700',
+    'Compétences Complémentaires': 'bg-amber-900/50 text-amber-300 border-amber-700',
+    'Trading & Finance': 'bg-emerald-900/50 text-emerald-300 border-emerald-700'
 };
-function FeaturedTrainings() {
-    // Fonction pour formater le prix
+function FeaturedTrainings({ trainings }) {
+    // Sélectionner 4 formations aléatoires
+    const featuredTrainings = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
+        return [
+            ...trainings
+        ].sort(()=>0.5 - Math.random()).slice(0, 4);
+    }, [
+        trainings
+    ]);
     const formatPrice = (price)=>{
         return new Intl.NumberFormat('fr-GN', {
             style: 'currency',
@@ -462,7 +423,7 @@ function FeaturedTrainings() {
         }).format(price).replace('GNF', 'GNF');
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "py-16 bg-white dark:bg-gray-950",
+        className: "py-16 bg-gray-950",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container px-4 mx-auto",
             children: [
@@ -470,245 +431,236 @@ function FeaturedTrainings() {
                     className: "text-center mb-12",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl mb-4",
-                            children: "Nos Formations Populaires"
+                            className: "text-3xl font-bold text-white sm:text-4xl mb-4",
+                            children: "Formations Populaires"
                         }, void 0, false, {
                             fileName: "[project]/components/featured-trainings.tsx",
-                            lineNumber: 85,
+                            lineNumber: 61,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto",
-                            children: "Découvrez nos formations les plus demandées par nos apprenants"
+                            className: "text-lg text-gray-300 max-w-2xl mx-auto",
+                            children: "Découvrez nos formations les plus demandées"
                         }, void 0, false, {
                             fileName: "[project]/components/featured-trainings.tsx",
-                            lineNumber: 88,
+                            lineNumber: 64,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/featured-trainings.tsx",
-                    lineNumber: 84,
+                    lineNumber: 60,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8",
-                    children: FEATURED_TRAININGS.map((training)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Card"], {
-                            className: "group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-gray-100 dark:border-gray-800 rounded-xl",
+                    className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+                    children: featuredTrainings.map((training)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Card"], {
+                            className: "group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-gray-800 bg-gray-900",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "relative h-48",
+                                    className: "relative h-40",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                             src: training.image,
                                             alt: training.title,
                                             fill: true,
-                                            className: "object-cover group-hover:scale-105 transition-transform duration-500",
+                                            className: "object-cover group-hover:scale-105 transition-transform duration-300",
                                             sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                         }, void 0, false, {
                                             fileName: "[project]/components/featured-trainings.tsx",
-                                            lineNumber: 97,
+                                            lineNumber: 73,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Badge"], {
-                                            className: `absolute top-3 right-3 ${categoryColors[training.category] || 'bg-gray-800 text-white'}`,
+                                            className: `absolute top-2 right-2 text-xs font-medium px-2 py-1 border ${categoryColors[training.category] || 'bg-gray-800 text-gray-200 border-gray-700'}`,
                                             children: training.category
                                         }, void 0, false, {
                                             fileName: "[project]/components/featured-trainings.tsx",
-                                            lineNumber: 104,
+                                            lineNumber: 80,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/featured-trainings.tsx",
-                                    lineNumber: 96,
+                                    lineNumber: 72,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CardContent"], {
-                                    className: "p-5",
+                                    className: "p-4",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex items-center justify-between mb-3",
+                                            className: "flex items-center justify-between mb-2",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300",
+                                                    className: "text-xs font-medium px-2 py-1 rounded-full bg-gray-800 text-gray-200",
                                                     children: training.level
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/featured-trainings.tsx",
-                                                    lineNumber: 115,
+                                                    lineNumber: 89,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-center space-x-2",
+                                                    className: "flex items-center space-x-1",
                                                     children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex items-center",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
-                                                                    className: "h-4 w-4 text-yellow-400 fill-yellow-400 mr-1"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/featured-trainings.tsx",
-                                                                    lineNumber: 120,
-                                                                    columnNumber: 23
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "text-sm font-medium",
-                                                                    children: training.rating
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/featured-trainings.tsx",
-                                                                    lineNumber: 121,
-                                                                    columnNumber: 23
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$star$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Star$3e$__["Star"], {
+                                                            className: "h-3.5 w-3.5 text-yellow-400 fill-yellow-400"
+                                                        }, void 0, false, {
                                                             fileName: "[project]/components/featured-trainings.tsx",
-                                                            lineNumber: 119,
+                                                            lineNumber: 93,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "text-gray-300",
+                                                            className: "text-sm font-medium text-gray-200",
+                                                            children: training.rating
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/featured-trainings.tsx",
+                                                            lineNumber: 94,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-gray-600 mx-1",
                                                             children: "•"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/featured-trainings.tsx",
-                                                            lineNumber: 123,
+                                                            lineNumber: 95,
                                                             columnNumber: 21
                                                         }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex items-center text-gray-500 text-sm",
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {
+                                                            className: "h-3.5 w-3.5 text-gray-400"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/featured-trainings.tsx",
+                                                            lineNumber: 96,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-sm text-gray-400",
                                                             children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {
-                                                                    className: "h-4 w-4 mr-1"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/featured-trainings.tsx",
-                                                                    lineNumber: 125,
-                                                                    columnNumber: 23
-                                                                }, this),
                                                                 training.students,
                                                                 "+"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/featured-trainings.tsx",
-                                                            lineNumber: 124,
+                                                            lineNumber: 97,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/featured-trainings.tsx",
-                                                    lineNumber: 118,
+                                                    lineNumber: 92,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/featured-trainings.tsx",
-                                            lineNumber: 114,
+                                            lineNumber: 88,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-lg font-bold text-gray-900 dark:text-white mb-2 line-clamp-2",
+                                            className: "text-base font-semibold text-white mb-1.5 line-clamp-2 leading-tight",
                                             children: training.title
                                         }, void 0, false, {
                                             fileName: "[project]/components/featured-trainings.tsx",
-                                            lineNumber: 131,
+                                            lineNumber: 101,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2",
+                                            className: "text-sm text-gray-400 mb-3 line-clamp-2",
                                             children: training.description
                                         }, void 0, false, {
                                             fileName: "[project]/components/featured-trainings.tsx",
-                                            lineNumber: 134,
+                                            lineNumber: 104,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-800",
+                                            className: "flex items-center justify-between pt-3 border-t border-gray-800",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-2xl font-bold text-primary",
+                                                            className: "text-lg font-bold text-white",
                                                             children: formatPrice(training.price)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/featured-trainings.tsx",
-                                                            lineNumber: 140,
+                                                            lineNumber: 110,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex items-center text-xs text-gray-500 mt-1",
+                                                            className: "flex items-center text-xs text-gray-400 mt-0.5",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
-                                                                    className: "h-3.5 w-3.5 mr-1"
+                                                                    className: "h-3 w-3 mr-1"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/featured-trainings.tsx",
-                                                                    lineNumber: 142,
+                                                                    lineNumber: 112,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: training.duration
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/featured-trainings.tsx",
-                                                                    lineNumber: 143,
+                                                                    lineNumber: 113,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/featured-trainings.tsx",
-                                                            lineNumber: 141,
+                                                            lineNumber: 111,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/featured-trainings.tsx",
-                                                    lineNumber: 139,
+                                                    lineNumber: 109,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
                                                     asChild: true,
                                                     size: "sm",
-                                                    className: "group-hover:bg-primary group-hover:text-white transition-colors",
+                                                    className: "bg-primary hover:bg-primary/90 text-white",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                                         href: `/formations/${training.id}`,
-                                                        className: "flex items-center",
+                                                        className: "flex items-center text-sm",
                                                         children: [
-                                                            "En savoir plus",
+                                                            "Voir plus",
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                                                className: "ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform"
+                                                                className: "ml-1 h-3.5 w-3.5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/featured-trainings.tsx",
-                                                                lineNumber: 149,
+                                                                lineNumber: 119,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/featured-trainings.tsx",
-                                                        lineNumber: 147,
+                                                        lineNumber: 117,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/featured-trainings.tsx",
-                                                    lineNumber: 146,
+                                                    lineNumber: 116,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/featured-trainings.tsx",
-                                            lineNumber: 138,
+                                            lineNumber: 108,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/featured-trainings.tsx",
-                                    lineNumber: 113,
+                                    lineNumber: 87,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, training.id, true, {
                             fileName: "[project]/components/featured-trainings.tsx",
-                            lineNumber: 95,
+                            lineNumber: 71,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/featured-trainings.tsx",
-                    lineNumber: 93,
+                    lineNumber: 69,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -716,36 +668,35 @@ function FeaturedTrainings() {
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
                         asChild: true,
                         size: "lg",
-                        variant: "outline",
-                        className: "border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors",
+                        className: "bg-primary hover:bg-primary/90 text-white",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                             href: "/formations",
-                            className: "font-semibold",
+                            className: "font-medium",
                             children: "Voir toutes les formations"
                         }, void 0, false, {
                             fileName: "[project]/components/featured-trainings.tsx",
-                            lineNumber: 160,
+                            lineNumber: 130,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/featured-trainings.tsx",
-                        lineNumber: 159,
+                        lineNumber: 129,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/featured-trainings.tsx",
-                    lineNumber: 158,
+                    lineNumber: 128,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/featured-trainings.tsx",
-            lineNumber: 83,
+            lineNumber: 59,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/featured-trainings.tsx",
-        lineNumber: 82,
+        lineNumber: 58,
         columnNumber: 5
     }, this);
 }
@@ -3205,6 +3156,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$testimonials$2
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$cta$2d$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/cta-section.tsx [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/footer.tsx [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$trainings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/data/trainings.ts [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@vercel/analytics/dist/next/index.mjs [app-rsc] (ecmascript)");
+;
 ;
 ;
 ;
@@ -3220,45 +3173,50 @@ function HomePage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$hero$2d$3d$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Hero3D"], {}, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 13,
+                lineNumber: 14,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$why$2d$masterit$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["WhyMasterIT"], {}, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 14,
+                lineNumber: 15,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$categories$2d$preview$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CategoriesPreview"], {}, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 15,
+                lineNumber: 16,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$featured$2d$trainings$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FeaturedTrainings"], {
                 trainings: Object.values(__TURBOPACK__imported__module__$5b$project$5d2f$data$2f$trainings$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["trainingPrograms"])
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 16,
+                lineNumber: 17,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$testimonials$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Testimonials"], {}, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 17,
+                lineNumber: 18,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$cta$2d$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CTASection"], {}, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 18,
+                lineNumber: 19,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 19,
+                lineNumber: 20,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Analytics"], {}, void 0, false, {
+                fileName: "[project]/app/page.tsx",
+                lineNumber: 21,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/page.tsx",
-        lineNumber: 12,
+        lineNumber: 13,
         columnNumber: 5
     }, this);
 }
