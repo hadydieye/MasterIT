@@ -6,6 +6,7 @@ import { Testimonials } from "@/components/testimonials"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
 import { trainingPrograms } from "@/data/trainings"
+import { Analytics } from "@vercel/analytics/next"
 
 export default function HomePage() {
   return (
